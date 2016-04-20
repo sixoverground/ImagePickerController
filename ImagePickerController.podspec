@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/sixoverground/ImagePickerController"
   s.license          = { :type => "MIT", :file => "LICENSE" }
   s.author           = "Six Overground"
-  s.platform         = :ios
+  s.platform         = :ios, "8.0"
   s.source           = { :git => "https://github.com/sixoverground/ImagePickerController.git", :tag => s.version.to_s }
   s.source_files     = "Classes/**/*"
   s.resource_bundles = { "ImagePickerController" => ["Images/*.{png}"] }
