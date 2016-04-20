@@ -14,6 +14,22 @@
 		4228CFE31CC665AF005902A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4228CFE11CC665AF005902A1 /* LaunchScreen.storyboard */; };
 		4228CFEE1CC665AF005902A1 /* ImagePickerControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228CFED1CC665AF005902A1 /* ImagePickerControllerTests.swift */; };
 		4228CFF91CC665AF005902A1 /* ImagePickerControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228CFF81CC665AF005902A1 /* ImagePickerControllerUITests.swift */; };
+		4228D0081CC665D8005902A1 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228D0071CC665D8005902A1 /* ImagePickerController.swift */; };
+		4228D00A1CC665F8005902A1 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228D0091CC665F8005902A1 /* GalleryViewController.swift */; };
+		4228D00C1CC66617005902A1 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228D00B1CC66617005902A1 /* GalleryCollectionViewCell.swift */; };
+		4228D00E1CC666FC005902A1 /* ImagePickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228D00D1CC666FC005902A1 /* ImagePickerModel.swift */; };
+		4228D0101CC69659005902A1 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228D00F1CC69659005902A1 /* CameraViewController.swift */; };
+		4228D0141CC6E2F0005902A1 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228D0131CC6E2F0005902A1 /* TopView.swift */; };
+		4228D0181CC6FFEE005902A1 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228D0171CC6FFEE005902A1 /* BottomView.swift */; };
+		4228D01A1CC7014A005902A1 /* ShutterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4228D0191CC7014A005902A1 /* ShutterButton.swift */; };
+		42E712591CC7D07B00017759 /* ImageStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E712581CC7D07B00017759 /* ImageStackView.swift */; };
+		42E712611CC816B400017759 /* AUTO@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E7125B1CC816B400017759 /* AUTO@3x.png */; };
+		42E712621CC816B400017759 /* cameraIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E7125C1CC816B400017759 /* cameraIcon@3x.png */; };
+		42E712631CC816B400017759 /* focusIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E7125D1CC816B400017759 /* focusIcon@3x.png */; };
+		42E712641CC816B400017759 /* OFF@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E7125E1CC816B400017759 /* OFF@3x.png */; };
+		42E712651CC816B400017759 /* ON@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E7125F1CC816B400017759 /* ON@3x.png */; };
+		42E712661CC816B400017759 /* selectedImageGallery@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E712601CC816B400017759 /* selectedImageGallery@3x.png */; };
+		42E712681CC816DE00017759 /* AssetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E712671CC816DE00017759 /* AssetManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +63,22 @@
 		4228CFF41CC665AF005902A1 /* ImagePickerControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagePickerControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4228CFF81CC665AF005902A1 /* ImagePickerControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerControllerUITests.swift; sourceTree = "<group>"; };
 		4228CFFA1CC665AF005902A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4228D0071CC665D8005902A1 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		4228D0091CC665F8005902A1 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		4228D00B1CC66617005902A1 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		4228D00D1CC666FC005902A1 /* ImagePickerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerModel.swift; sourceTree = "<group>"; };
+		4228D00F1CC69659005902A1 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		4228D0131CC6E2F0005902A1 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		4228D0171CC6FFEE005902A1 /* BottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		4228D0191CC7014A005902A1 /* ShutterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShutterButton.swift; sourceTree = "<group>"; };
+		42E712581CC7D07B00017759 /* ImageStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStackView.swift; sourceTree = "<group>"; };
+		42E7125B1CC816B400017759 /* AUTO@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUTO@3x.png"; sourceTree = "<group>"; };
+		42E7125C1CC816B400017759 /* cameraIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraIcon@3x.png"; sourceTree = "<group>"; };
+		42E7125D1CC816B400017759 /* focusIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focusIcon@3x.png"; sourceTree = "<group>"; };
+		42E7125E1CC816B400017759 /* OFF@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OFF@3x.png"; sourceTree = "<group>"; };
+		42E7125F1CC816B400017759 /* ON@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ON@3x.png"; sourceTree = "<group>"; };
+		42E712601CC816B400017759 /* selectedImageGallery@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectedImageGallery@3x.png"; sourceTree = "<group>"; };
+		42E712671CC816DE00017759 /* AssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +129,8 @@
 		4228CFD71CC665AF005902A1 /* ImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
+				42E7125A1CC816B400017759 /* Images */,
+				4228D0061CC665C5005902A1 /* Source */,
 				4228CFD81CC665AF005902A1 /* AppDelegate.swift */,
 				4228CFDA1CC665AF005902A1 /* ViewController.swift */,
 				4228CFDC1CC665AF005902A1 /* Main.storyboard */,
@@ -123,6 +157,68 @@
 				4228CFFA1CC665AF005902A1 /* Info.plist */,
 			);
 			path = ImagePickerControllerUITests;
+			sourceTree = "<group>";
+		};
+		4228D0061CC665C5005902A1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4228D0161CC6FFD8005902A1 /* Bottom */,
+				4228D0121CC69CBA005902A1 /* Camera */,
+				4228D0111CC69CB5005902A1 /* Gallery */,
+				4228D0151CC6E2F7005902A1 /* Top */,
+				4228D0071CC665D8005902A1 /* ImagePickerController.swift */,
+				4228D00D1CC666FC005902A1 /* ImagePickerModel.swift */,
+				42E712671CC816DE00017759 /* AssetManager.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		4228D0111CC69CB5005902A1 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				4228D0091CC665F8005902A1 /* GalleryViewController.swift */,
+				4228D00B1CC66617005902A1 /* GalleryCollectionViewCell.swift */,
+			);
+			name = Gallery;
+			sourceTree = "<group>";
+		};
+		4228D0121CC69CBA005902A1 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				4228D00F1CC69659005902A1 /* CameraViewController.swift */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		4228D0151CC6E2F7005902A1 /* Top */ = {
+			isa = PBXGroup;
+			children = (
+				4228D0131CC6E2F0005902A1 /* TopView.swift */,
+			);
+			name = Top;
+			sourceTree = "<group>";
+		};
+		4228D0161CC6FFD8005902A1 /* Bottom */ = {
+			isa = PBXGroup;
+			children = (
+				4228D0171CC6FFEE005902A1 /* BottomView.swift */,
+				4228D0191CC7014A005902A1 /* ShutterButton.swift */,
+				42E712581CC7D07B00017759 /* ImageStackView.swift */,
+			);
+			name = Bottom;
+			sourceTree = "<group>";
+		};
+		42E7125A1CC816B400017759 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				42E7125B1CC816B400017759 /* AUTO@3x.png */,
+				42E7125C1CC816B400017759 /* cameraIcon@3x.png */,
+				42E7125D1CC816B400017759 /* focusIcon@3x.png */,
+				42E7125E1CC816B400017759 /* OFF@3x.png */,
+				42E7125F1CC816B400017759 /* ON@3x.png */,
+				42E712601CC816B400017759 /* selectedImageGallery@3x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +289,7 @@
 				TargetAttributes = {
 					4228CFD41CC665AF005902A1 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2HP57438TZ;
 					};
 					4228CFE81CC665AF005902A1 = {
 						CreatedOnToolsVersion = 7.3;
@@ -229,9 +326,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E712661CC816B400017759 /* selectedImageGallery@3x.png in Resources */,
 				4228CFE31CC665AF005902A1 /* LaunchScreen.storyboard in Resources */,
 				4228CFE01CC665AF005902A1 /* Assets.xcassets in Resources */,
+				42E712621CC816B400017759 /* cameraIcon@3x.png in Resources */,
+				42E712631CC816B400017759 /* focusIcon@3x.png in Resources */,
+				42E712651CC816B400017759 /* ON@3x.png in Resources */,
+				42E712611CC816B400017759 /* AUTO@3x.png in Resources */,
 				4228CFDE1CC665AF005902A1 /* Main.storyboard in Resources */,
+				42E712641CC816B400017759 /* OFF@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +359,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4228D0181CC6FFEE005902A1 /* BottomView.swift in Sources */,
+				4228D01A1CC7014A005902A1 /* ShutterButton.swift in Sources */,
 				4228CFDB1CC665AF005902A1 /* ViewController.swift in Sources */,
+				42E712591CC7D07B00017759 /* ImageStackView.swift in Sources */,
+				42E712681CC816DE00017759 /* AssetManager.swift in Sources */,
+				4228D0081CC665D8005902A1 /* ImagePickerController.swift in Sources */,
+				4228D00C1CC66617005902A1 /* GalleryCollectionViewCell.swift in Sources */,
+				4228D00E1CC666FC005902A1 /* ImagePickerModel.swift in Sources */,
+				4228D0101CC69659005902A1 /* CameraViewController.swift in Sources */,
 				4228CFD91CC665AF005902A1 /* AppDelegate.swift in Sources */,
+				4228D0141CC6E2F0005902A1 /* TopView.swift in Sources */,
+				4228D00A1CC665F8005902A1 /* GalleryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,10 +512,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ImagePickerController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixoverground.ImagePickerController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -410,10 +526,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ImagePickerController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixoverground.ImagePickerController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -482,6 +601,7 @@
 				4228CFFF1CC665AF005902A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4228D0001CC665AF005902A1 /* Build configuration list for PBXNativeTarget "ImagePickerControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +610,7 @@
 				4228D0021CC665AF005902A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4228D0031CC665AF005902A1 /* Build configuration list for PBXNativeTarget "ImagePickerControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +619,7 @@
 				4228D0051CC665AF005902A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
