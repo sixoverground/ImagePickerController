@@ -63,22 +63,22 @@
 		4228CFF41CC665AF005902A1 /* ImagePickerControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagePickerControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4228CFF81CC665AF005902A1 /* ImagePickerControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerControllerUITests.swift; sourceTree = "<group>"; };
 		4228CFFA1CC665AF005902A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4228D0071CC665D8005902A1 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
-		4228D0091CC665F8005902A1 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
-		4228D00B1CC66617005902A1 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
-		4228D00D1CC666FC005902A1 /* ImagePickerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerModel.swift; sourceTree = "<group>"; };
-		4228D00F1CC69659005902A1 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		4228D0131CC6E2F0005902A1 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
-		4228D0171CC6FFEE005902A1 /* BottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
-		4228D0191CC7014A005902A1 /* ShutterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShutterButton.swift; sourceTree = "<group>"; };
-		42E712581CC7D07B00017759 /* ImageStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStackView.swift; sourceTree = "<group>"; };
+		4228D0071CC665D8005902A1 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerController.swift; path = ../Classes/ImagePickerController.swift; sourceTree = "<group>"; };
+		4228D0091CC665F8005902A1 /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryViewController.swift; path = ../Classes/GalleryViewController.swift; sourceTree = "<group>"; };
+		4228D00B1CC66617005902A1 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryCollectionViewCell.swift; path = ../Classes/GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		4228D00D1CC666FC005902A1 /* ImagePickerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePickerModel.swift; path = ../Classes/ImagePickerModel.swift; sourceTree = "<group>"; };
+		4228D00F1CC69659005902A1 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = ../Classes/CameraViewController.swift; sourceTree = "<group>"; };
+		4228D0131CC6E2F0005902A1 /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TopView.swift; path = ../Classes/TopView.swift; sourceTree = "<group>"; };
+		4228D0171CC6FFEE005902A1 /* BottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BottomView.swift; path = ../Classes/BottomView.swift; sourceTree = "<group>"; };
+		4228D0191CC7014A005902A1 /* ShutterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShutterButton.swift; path = ../Classes/ShutterButton.swift; sourceTree = "<group>"; };
+		42E712581CC7D07B00017759 /* ImageStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageStackView.swift; path = ../Classes/ImageStackView.swift; sourceTree = "<group>"; };
 		42E7125B1CC816B400017759 /* AUTO@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AUTO@3x.png"; sourceTree = "<group>"; };
 		42E7125C1CC816B400017759 /* cameraIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cameraIcon@3x.png"; sourceTree = "<group>"; };
 		42E7125D1CC816B400017759 /* focusIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "focusIcon@3x.png"; sourceTree = "<group>"; };
 		42E7125E1CC816B400017759 /* OFF@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OFF@3x.png"; sourceTree = "<group>"; };
 		42E7125F1CC816B400017759 /* ON@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ON@3x.png"; sourceTree = "<group>"; };
 		42E712601CC816B400017759 /* selectedImageGallery@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectedImageGallery@3x.png"; sourceTree = "<group>"; };
-		42E712671CC816DE00017759 /* AssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetManager.swift; sourceTree = "<group>"; };
+		42E712671CC816DE00017759 /* AssetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssetManager.swift; path = ../Classes/AssetManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +109,8 @@
 		4228CFCC1CC665AF005902A1 = {
 			isa = PBXGroup;
 			children = (
+				4228D0061CC665C5005902A1 /* Classes */,
+				42E7125A1CC816B400017759 /* Images */,
 				4228CFD71CC665AF005902A1 /* ImagePickerController */,
 				4228CFEC1CC665AF005902A1 /* ImagePickerControllerTests */,
 				4228CFF71CC665AF005902A1 /* ImagePickerControllerUITests */,
@@ -129,8 +131,6 @@
 		4228CFD71CC665AF005902A1 /* ImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
-				42E7125A1CC816B400017759 /* Images */,
-				4228D0061CC665C5005902A1 /* Source */,
 				4228CFD81CC665AF005902A1 /* AppDelegate.swift */,
 				4228CFDA1CC665AF005902A1 /* ViewController.swift */,
 				4228CFDC1CC665AF005902A1 /* Main.storyboard */,
@@ -159,7 +159,7 @@
 			path = ImagePickerControllerUITests;
 			sourceTree = "<group>";
 		};
-		4228D0061CC665C5005902A1 /* Source */ = {
+		4228D0061CC665C5005902A1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				4228D0161CC6FFD8005902A1 /* Bottom */,
@@ -170,7 +170,7 @@
 				4228D00D1CC666FC005902A1 /* ImagePickerModel.swift */,
 				42E712671CC816DE00017759 /* AssetManager.swift */,
 			);
-			name = Source;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		4228D0111CC69CB5005902A1 /* Gallery */ = {
