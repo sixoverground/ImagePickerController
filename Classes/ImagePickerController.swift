@@ -35,6 +35,7 @@ public class ImagePickerController: UIViewController {
   
   lazy var cameraViewController: CameraViewController = {
     let cameraViewController = CameraViewController()
+    cameraViewController.delegate = self
     return cameraViewController
     }()
   
@@ -146,7 +147,9 @@ public class ImagePickerController: UIViewController {
     
     let alertAction = UIAlertAction(title: "OK", style: .Default) { (action) in
       if let settingsURL = NSURL(string: UIApplicationOpenSettingsURLString) {
-        UIApplication.sharedApplication().openURL(settingsURL)
+        dispatch_async(dispatch_get_main_queue(), {
+          UIApplication.sharedApplication().openURL(settingsURL)
+        })
       }
     }
     
@@ -161,6 +164,7 @@ public class ImagePickerController: UIViewController {
   }
   
   func permissionGranted() {
+    cameraViewController.initializeCamera()
     galleryViewController.fetchAssets()
     setEnabled(true)
   }
@@ -227,4 +231,14 @@ extension ImagePickerController: TopViewDelegate {
     cameraViewController.flipCamera()
   }
 
+}
+
+// MARK: - CameraViewDelegate
+
+extension ImagePickerController: CameraViewDelegate {
+  
+  func setFlashButtonHidden(hidden: Bool) {
+    topView.flashButton.hidden = hidden
+  }
+  
 }

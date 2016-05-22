@@ -127,4 +127,5 @@ class TopView: UIView {
   func cameraButtonWasTapped(sender: UIButton) {
     delegate?.topViewDidToggleCamera()
   }
+  
 }

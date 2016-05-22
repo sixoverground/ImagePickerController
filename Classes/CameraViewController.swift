@@ -10,6 +10,10 @@ import UIKit
 import AVFoundation
 import Photos
 
+protocol CameraViewDelegate: class {
+  func setFlashButtonHidden(hidden: Bool)
+}
+
 class CameraViewController: UIViewController {
   
   lazy var capturedImageView: UIView = { [unowned self] in
@@ -21,10 +25,21 @@ class CameraViewController: UIViewController {
 
   let captureSession = AVCaptureSession()
   var devices = AVCaptureDevice.devices()
-  var captureDevice: AVCaptureDevice?
+  var captureDevice: AVCaptureDevice? {
+    didSet {
+      if let myDevice = captureDevice {
+        print("HAS FLASH: \(myDevice.hasFlash)")
+        delegate?.setFlashButtonHidden(!myDevice.hasFlash)
+      } else {
+        delegate?.setFlashButtonHidden(false)
+      }
+    }
+  }
   var capturedDevices: NSMutableArray?
   var previewLayer: AVCaptureVideoPreviewLayer?
   var stillImageOutput: AVCaptureStillImageOutput?
+  
+  weak var delegate: CameraViewDelegate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
