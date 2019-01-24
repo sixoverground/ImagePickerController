@@ -34,7 +34,7 @@ class ImageStackView: UIView {
         //    imageView.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
-        for attribute: NSLayoutAttribute in [.left, .top, .right, .bottom] {
+        for attribute: NSLayoutConstraint.Attribute in [.left, .top, .right, .bottom] {
             addConstraint(NSLayoutConstraint(item: imageView, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: 0))
         }
         
@@ -54,7 +54,7 @@ class ImageStackView: UIView {
         NotificationCenter.default.addObserver(self, selector: #selector(selectedAssetDidChange(_:)), name: NSNotification.Name(rawValue: ImagePickerModel.Notifications.selectedAssetDidChange), object: nil)
     }
     
-    func selectedAssetDidChange(_ notification: NSNotification) {
+    @objc func selectedAssetDidChange(_ notification: NSNotification) {
         if let sender = notification.object as? ImagePickerModel {
             if let asset = sender.selectedAsset {
                 renderViews(asset: asset)

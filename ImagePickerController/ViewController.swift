@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
-  @IBAction func imageButtonWasTapped(sender: AnyObject) {
+  @IBAction func imageButtonWasTapped(_ sender: AnyObject) {
     showImagePicker()
   }
   

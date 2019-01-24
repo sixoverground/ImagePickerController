@@ -45,7 +45,7 @@ class GalleryViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        for attribute: NSLayoutAttribute in [.left, .top, .right, .bottom] {
+        for attribute: NSLayoutConstraint.Attribute in [.left, .top, .right, .bottom] {
             view.addConstraint(NSLayoutConstraint(item: collectionView, attribute: attribute, relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0))
         }
         
@@ -80,7 +80,7 @@ class GalleryViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(selectedAssetDidChange(_:)), name: NSNotification.Name(rawValue: ImagePickerModel.Notifications.selectedAssetDidChange), object: nil)
     }
     
-    func selectedAssetDidChange(_ notification: NSNotification) {
+    @objc func selectedAssetDidChange(_ notification: NSNotification) {
         if let asset = ImagePickerModel.sharedInstance.selectedAsset {
             if let index = assets.firstIndex(of: asset) {
                 let indexPath = NSIndexPath(row: index, section: 0)

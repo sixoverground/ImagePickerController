@@ -290,13 +290,16 @@
 					4228CFD41CC665AF005902A1 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 2HP57438TZ;
+						LastSwiftMigration = 1010;
 					};
 					4228CFE81CC665AF005902A1 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 1010;
 						TestTargetID = 4228CFD41CC665AF005902A1;
 					};
 					4228CFF31CC665AF005902A1 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 1010;
 						TestTargetID = 4228CFD41CC665AF005902A1;
 					};
 				};
@@ -542,6 +545,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixoverground.ImagePickerController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -556,6 +561,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixoverground.ImagePickerController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -567,6 +574,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixoverground.ImagePickerControllerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImagePickerController.app/ImagePickerController";
 			};
 			name = Debug;
@@ -579,6 +588,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixoverground.ImagePickerControllerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImagePickerController.app/ImagePickerController";
 			};
 			name = Release;
@@ -590,6 +601,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixoverground.ImagePickerControllerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = ImagePickerController;
 			};
 			name = Debug;
@@ -601,6 +614,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sixoverground.ImagePickerControllerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 				TEST_TARGET_NAME = ImagePickerController;
 			};
 			name = Release;

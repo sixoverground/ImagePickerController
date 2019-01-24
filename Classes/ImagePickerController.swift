@@ -88,7 +88,7 @@ public class ImagePickerController: UIViewController {
     
     func setupConstraints() {
         
-        for attribute: NSLayoutAttribute in [.left, .top, .width] {
+        for attribute: NSLayoutConstraint.Attribute in [.left, .top, .width] {
             view.addConstraint(NSLayoutConstraint(item: topView, attribute: attribute, relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0))
         }
         
@@ -96,13 +96,13 @@ public class ImagePickerController: UIViewController {
         
         //    view.addConstraint(NSLayoutConstraint(item: topView, attribute: .Bottom, relatedBy: .Equal, toItem: cameraViewController.view, attribute: .Top, multiplier: 1, constant: 0))
         
-        for attribute: NSLayoutAttribute in [.left, .top, .width] {
+        for attribute: NSLayoutConstraint.Attribute in [.left, .top, .width] {
             view.addConstraint(NSLayoutConstraint(item: cameraViewController.view, attribute: attribute, relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0))
         }
         
         view.addConstraint(NSLayoutConstraint(item: cameraViewController.view, attribute: .bottom, relatedBy: .equal, toItem: galleryViewController.view, attribute: .top, multiplier: 1, constant: 0))
         
-        for attribute: NSLayoutAttribute in [.left, .width] {
+        for attribute: NSLayoutConstraint.Attribute in [.left, .width] {
             view.addConstraint(NSLayoutConstraint(item: galleryViewController.view, attribute: attribute, relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0))
         }
         
@@ -111,7 +111,7 @@ public class ImagePickerController: UIViewController {
         
         view.addConstraint(NSLayoutConstraint(item: galleryViewController.view, attribute: .bottom, relatedBy: .equal, toItem: bottomView, attribute: .top, multiplier: 1, constant: 0))
         
-        for attribute: NSLayoutAttribute in [.bottom, .left, .width] {
+        for attribute: NSLayoutConstraint.Attribute in [.bottom, .left, .width] {
             view.addConstraint(NSLayoutConstraint(item: bottomView, attribute: attribute,
                                                   relatedBy: .equal, toItem: view, attribute: attribute,
                                                   multiplier: 1, constant: 0))
@@ -148,7 +148,7 @@ public class ImagePickerController: UIViewController {
         let alertController = UIAlertController(title: "Permission Denied", message: "Please allow the application to access your photo library.", preferredStyle: .alert)
         
         let alertAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            if let settingsURL = NSURL(string: UIApplicationOpenSettingsURLString) {
+            if let settingsURL = NSURL(string: UIApplication.openSettingsURLString) {
                 DispatchQueue.main.async {
                     UIApplication.shared.openURL(settingsURL as URL)
                 }

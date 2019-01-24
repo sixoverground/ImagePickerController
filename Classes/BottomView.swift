@@ -72,7 +72,7 @@ public class BottomView: UIView {
         NotificationCenter.default.addObserver(self, selector: #selector(selectedAssetDidChange(_:)), name: NSNotification.Name(rawValue: ImagePickerModel.Notifications.selectedAssetDidChange), object: nil)
     }
     
-    func selectedAssetDidChange(_ notification: NSNotification) {
+    @objc func selectedAssetDidChange(_ notification: NSNotification) {
         if ImagePickerModel.sharedInstance.selectedAsset == nil {
             doneButton.setTitle("Cancel", for: .normal)
         } else {
@@ -83,13 +83,13 @@ public class BottomView: UIView {
     // MARK: - Layout
     
     func setupConstraints() {
-        for attribute: NSLayoutAttribute in [.centerX, .centerY] {
+        for attribute: NSLayoutConstraint.Attribute in [.centerX, .centerY] {
             addConstraint(NSLayoutConstraint(item: shutterButton, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: 0))
             
             addConstraint(NSLayoutConstraint(item: borderShutterButtonView, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: 0))
         }
         
-        for attribute: NSLayoutAttribute in [.width, .height] {
+        for attribute: NSLayoutConstraint.Attribute in [.width, .height] {
             addConstraint(NSLayoutConstraint(item: shutterButton, attribute: attribute, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 58))
             
             addConstraint(NSLayoutConstraint(item: borderShutterButtonView, attribute: attribute, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 68))
@@ -109,11 +109,11 @@ public class BottomView: UIView {
     
     // MARK: - Actions
     
-    func shutterButtonWasTapped(_ sender: ShutterButton) {
+    @objc func shutterButtonWasTapped(_ sender: ShutterButton) {
         delegate?.bottomViewDidTakePicture()
     }
     
-    func doneButtonWasTapped(_ sender: UIButton) {
+    @objc func doneButtonWasTapped(_ sender: UIButton) {
         if sender.currentTitle == "Cancel" {
             delegate?.bottomViewDidCancel()
         } else {

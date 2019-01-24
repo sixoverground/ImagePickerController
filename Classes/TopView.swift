@@ -102,7 +102,7 @@ class TopView: UIView {
     
     // MARK: - Actions
     
-    func flashButtonWasTapped(_ sender: UIButton) {
+    @objc func flashButtonWasTapped(_ sender: UIButton) {
         
         currentFlashIndex += 1
         currentFlashIndex = currentFlashIndex % flashButtonTitles.count
@@ -124,7 +124,7 @@ class TopView: UIView {
         delegate?.topViewDidChangeFlash(title: newTitle)
     }
     
-    func cameraButtonWasTapped(_ sender: UIButton) {
+    @objc func cameraButtonWasTapped(_ sender: UIButton) {
         delegate?.topViewDidToggleCamera()
     }
     

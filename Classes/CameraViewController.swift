@@ -51,7 +51,7 @@ class CameraViewController: UIViewController {
         
         view.addSubview(capturedImageView)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationDidChange(_:)), name: UIDevice.orientationDidChangeNotification, object: nil)
         
     }
     
@@ -86,23 +86,21 @@ class CameraViewController: UIViewController {
         print("init camera")
         capturedDevices = NSMutableArray()
         
-        let authorizationStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        let authorizationStatus = AVCaptureDevice.authorizationStatus(for: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video)))
         
-        if devices?.isEmpty ?? true { devices = AVCaptureDevice.devices() }
+        if devices.isEmpty { devices = AVCaptureDevice.devices() }
         
-        if let devices = devices {
-            for device in devices {
-                if let device = device as? AVCaptureDevice, device.hasMediaType(AVMediaTypeVideo) {
-                    if authorizationStatus == .authorized {
-                        captureDevice = device
-                        capturedDevices?.add(device)
-                    } else if authorizationStatus == .notDetermined {
-                        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { (granted) in
-                            self.handlePermission(granted: granted, device: device)
-                        })
-                    } else {
-                        // show no camera
-                    }
+        for device in devices {
+            if device.hasMediaType(AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video))) {
+                if authorizationStatus == .authorized {
+                    captureDevice = device
+                    capturedDevices?.add(device)
+                } else if authorizationStatus == .notDetermined {
+                    AVCaptureDevice.requestAccess(for: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video)), completionHandler: { (granted) in
+                        self.handlePermission(granted: granted, device: device)
+                    })
+                } else {
+                    // show no camera
                 }
             }
         }
@@ -133,17 +131,17 @@ class CameraViewController: UIViewController {
         
         let captureDeviceInput: AVCaptureDeviceInput?
         do { try
-            captureDeviceInput = AVCaptureDeviceInput(device: captureDevice)
-            captureSession.addInput(captureDeviceInput)
+            captureDeviceInput = AVCaptureDeviceInput(device: captureDevice!)
+            captureSession.addInput(captureDeviceInput!)
         } catch {
             print("Failed to capture device")
         }
         
-        guard let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession) else { return }
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         print("load previewLayer: \(previewLayer)")
         self.previewLayer = previewLayer
         previewLayer.autoreverses = true
-        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        previewLayer.videoGravity = AVLayerVideoGravity(rawValue: convertFromAVLayerVideoGravity(AVLayerVideoGravity.resizeAspectFill))
         view.layer.addSublayer(previewLayer)
         
         //    let totalBounds = UIScreen.mainScreen().bounds
@@ -164,7 +162,7 @@ class CameraViewController: UIViewController {
         captureSession.startRunning()
         stillImageOutput = AVCaptureStillImageOutput()
         stillImageOutput?.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
-        captureSession.addOutput(stillImageOutput)
+        captureSession.addOutput(stillImageOutput!)
     }
     
     // MARK: - Permissions
@@ -196,7 +194,7 @@ class CameraViewController: UIViewController {
         self.captureSession.beginConfiguration()
         self.captureSession.removeInput(currentDeviceInput)
         do { try
-            self.captureSession.addInput(AVCaptureDeviceInput(device: self.captureDevice))
+            self.captureSession.addInput(AVCaptureDeviceInput(device: self.captureDevice!))
         } catch {
             print("There was an error capturing your device.")
         }
@@ -213,7 +211,7 @@ class CameraViewController: UIViewController {
             print("could not lock device")
         }
         
-        var flashMode = AVCaptureFlashMode.auto
+        var flashMode = AVCaptureDevice.FlashMode.auto
         
         switch title {
         case "ON":
@@ -248,8 +246,8 @@ class CameraViewController: UIViewController {
         guard let stillImageOutput = self.stillImageOutput else { return }
         
         queue.async {
-            stillImageOutput.captureStillImageAsynchronously(from: stillImageOutput.connection(withMediaType: AVMediaTypeVideo), completionHandler: { (buffer, error) in
-                guard let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer) else { return }
+            stillImageOutput.captureStillImageAsynchronously(from: stillImageOutput.connection(with: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video)))!, completionHandler: { (buffer, error) in
+                guard let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer!) else { return }
                 guard let imageFromData = UIImage(data: imageData) else { return }
                 PHPhotoLibrary.shared().performChanges({
                     let request = PHAssetChangeRequest.creationRequestForAsset(from: imageFromData)
@@ -266,13 +264,13 @@ class CameraViewController: UIViewController {
     
     // MARK: - Helpers
     
-    func deviceOrientationDidChange(_ notification: NSNotification) {
+    @objc func deviceOrientationDidChange(_ notification: NSNotification) {
         print("device orientation did change")
         fixOrientation()
     }
     
     func fixOrientation() {
-        guard let stillImageOutput = self.stillImageOutput, let connection = stillImageOutput.connection(withMediaType: AVMediaTypeVideo) else { return }
+        guard let stillImageOutput = self.stillImageOutput, let connection = stillImageOutput.connection(with: AVMediaType(rawValue: convertFromAVMediaType(AVMediaType.video))) else { return }
         
         switch UIDevice.current.orientation {
         case .portrait:
@@ -292,4 +290,14 @@ class CameraViewController: UIViewController {
         }
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVMediaType(_ input: AVMediaType) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVLayerVideoGravity(_ input: AVLayerVideoGravity) -> String {
+	return input.rawValue
 }

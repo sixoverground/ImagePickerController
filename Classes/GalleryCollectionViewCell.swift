@@ -39,7 +39,7 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     // MARK: - Constraints
     
     func setupConstraints() {
-        for attribute: NSLayoutAttribute in [.width, .height, .centerX, .centerY] {
+        for attribute: NSLayoutConstraint.Attribute in [.width, .height, .centerX, .centerY] {
             addConstraint(NSLayoutConstraint(item: imageView, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: 0))
             addConstraint(NSLayoutConstraint(item: selectedView, attribute: attribute, relatedBy: .equal, toItem: self, attribute: attribute, multiplier: 1, constant: 0))
         }

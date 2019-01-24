@@ -33,11 +33,11 @@ class ShutterButton: UIButton {
     
     // MARK: - Actions
     
-    func shutterButtonWasTapped(_ sender: UIButton) {
+    @objc func shutterButtonWasTapped(_ sender: UIButton) {
         backgroundColor = UIColor.white
     }
     
-    func shutterButtonDidHighlight(_ sender: UIButton) {
+    @objc func shutterButtonDidHighlight(_ sender: UIButton) {
         backgroundColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1)
     }
     
