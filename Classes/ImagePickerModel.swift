@@ -9,75 +9,74 @@
 import PhotosUI
 
 public class ImagePickerModel {
-  
-  static let sharedInstance = ImagePickerModel()
-  private init() {}
-  
-  public struct Notifications {
-    public static let selectedAssetDidChange = "selectedAssetDidChange"
-  }
-  
-  private let selectedAssetKey = "selectedAsset"
-  
-  public var selectedAsset: PHAsset? {
-    didSet {
-      NSNotificationCenter.defaultCenter().postNotificationName(Notifications.selectedAssetDidChange, object: self, userInfo: nil)
+    
+    static let sharedInstance = ImagePickerModel()
+    private init() {}
+    
+    public struct Notifications {
+        public static let selectedAssetDidChange = "selectedAssetDidChange"
     }
-  }
-
-  public static func fetch(completion: (assets: [PHAsset]) -> Void) {
     
-    let fetchOptions = PHFetchOptions()
-    let authorizationStatus = PHPhotoLibrary.authorizationStatus()
-    var fetchResult: PHFetchResult?
+    private let selectedAssetKey = "selectedAsset"
     
-    guard authorizationStatus == .Authorized else { return }
-    
-    if fetchResult == nil {
-      fetchResult = PHAsset.fetchAssetsWithMediaType(.Image, options: fetchOptions)
+    public var selectedAsset: PHAsset? {
+        didSet {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Notifications.selectedAssetDidChange), object: self)
+        }
     }
+    
+    public static func fetch(completion: @escaping (_ assets: [PHAsset]) -> Void) {
         
-    if fetchResult?.count > 0 {
-      var assets = [PHAsset]()
-      fetchResult?.enumerateObjectsUsingBlock({ (object, index, stop) in
-        if let asset = object as? PHAsset {
-          assets.insert(asset, atIndex: 0)
+        let fetchOptions = PHFetchOptions()
+        let authorizationStatus = PHPhotoLibrary.authorizationStatus()
+        var fetchResult: PHFetchResult<AnyObject>?
+        
+        guard authorizationStatus == .authorized else { return }
+        
+        if fetchResult == nil {
+            fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions) as? PHFetchResult<AnyObject>
         }
-      })
-      
-      dispatch_async(dispatch_get_main_queue()) {
-        completion(assets: assets)
-      }
-    }
-  }
-  
-  public static func resolveAsset(asset: PHAsset, size: CGSize = CGSize(width: 720, height: 1280), completion: (image: UIImage?) -> Void) {
-    let imageManager = PHImageManager.defaultManager()
-    let requestOptions = PHImageRequestOptions()
-    
-    imageManager.requestImageForAsset(asset, targetSize: size, contentMode: .AspectFill, options: requestOptions) { (image, info) in
-      if let info = info where info["PHImageFileUTIKey"] == nil {
-        dispatch_async(dispatch_get_main_queue(), { 
-          completion(image: image)
-        })
-      }
-    }
-  }
-  
-  public static func resolveAssets(assets: [PHAsset], size: CGSize = CGSize(width: 720, height: 1280)) -> [UIImage] {
-    let imageManager = PHImageManager.defaultManager()
-    let requestOptions = PHImageRequestOptions()
-    requestOptions.synchronous = true
-    
-    var images = [UIImage]()
-    for asset in assets {
-      imageManager.requestImageForAsset(asset, targetSize: size, contentMode: .AspectFill, options: requestOptions) { (image, info) in
-        if let image = image {
-          images.append(image)
+        
+        if fetchResult?.count ?? 0 > 0 {
+            var assets = [PHAsset]()
+            fetchResult?.enumerateObjects({ (object, index, stop) in
+                if let asset = object as? PHAsset {
+                    assets.insert(asset, at: 0)
+                }
+            })
+            DispatchQueue.main.async {
+                completion(assets)
+            }
         }
-      }
     }
-    return images
-  }
-  
+    
+    public static func resolveAsset(asset: PHAsset, size: CGSize = CGSize(width: 720, height: 1280), completion: @escaping (_ image: UIImage?) -> Void) {
+        let imageManager = PHImageManager.default()
+        let requestOptions = PHImageRequestOptions()
+        
+        imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions) { (image, info) in
+            if let info = info, info["PHImageFileUTIKey"] == nil {
+                DispatchQueue.main.async {
+                    completion(image)
+                }
+            }
+        }
+    }
+    
+    public static func resolveAssets(assets: [PHAsset], size: CGSize = CGSize(width: 720, height: 1280)) -> [UIImage] {
+        let imageManager = PHImageManager.default()
+        let requestOptions = PHImageRequestOptions()
+        requestOptions.isSynchronous = true
+        
+        var images = [UIImage]()
+        for asset in assets {
+            imageManager.requestImage(for: asset, targetSize: size, contentMode: .aspectFill, options: requestOptions) { (image, info) in
+                if let image = image {
+                    images.append(image)
+                }
+            }
+        }
+        return images
+    }
+    
 }

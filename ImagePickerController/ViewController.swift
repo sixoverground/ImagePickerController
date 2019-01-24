@@ -29,7 +29,7 @@ class ViewController: UIViewController {
   func showImagePicker() {
     let imagePickerController = ImagePickerController()
     imagePickerController.delegate = self
-    presentViewController(imagePickerController, animated: true, completion: nil)
+    present(imagePickerController, animated: true, completion: nil)
   }
 
 }

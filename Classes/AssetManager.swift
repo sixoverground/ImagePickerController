@@ -13,13 +13,13 @@ public class AssetManager {
   
   public static func getImage(name: String) -> UIImage {
     let traitCollection = UITraitCollection(displayScale: 3)
-    var bundle = NSBundle(forClass: AssetManager.self)
+    var bundle = Bundle(for: AssetManager.self)
     
-    if let bundlePath = bundle.resourcePath?.stringByAppendingString("/ImagePickerController.bundle"), resourceBundle = NSBundle(path: bundlePath) {
+    if let bundlePath = bundle.resourcePath?.appendingFormat("/ImagePickerController.bundle"), let resourceBundle = Bundle(path: bundlePath) {
       bundle = resourceBundle
     }
     
-    return UIImage(named: name, inBundle: bundle, compatibleWithTraitCollection: traitCollection) ?? UIImage()
+    return UIImage(named: name, in: bundle, compatibleWith: traitCollection) ?? UIImage()
   }
   
 }
